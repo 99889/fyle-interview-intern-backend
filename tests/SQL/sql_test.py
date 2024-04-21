@@ -2,6 +2,7 @@ from core import db
 from core.models.assignments import Assignment, AssignmentStateEnum, GradeEnum
 import random
 from sqlalchemy import text
+from sqlalchemy import func
 
 
 def create_n_graded_assignments_for_teacher(number: int = 0, teacher_id: int = 1) -> int:
@@ -93,7 +94,7 @@ def test_get_assignments_in_various_states():
         assert result[0] == sql_result[itr][0]
         assert result[1] == sql_result[itr][1]
 
-from sqlalchemy import func
+
 def test_get_grade_A_assignments_for_teacher_with_max_grading():
     """Test to get count of grade A assignments for teacher which has graded maximum assignments"""
 
