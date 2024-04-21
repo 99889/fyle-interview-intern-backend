@@ -5,6 +5,7 @@ from core.apis.responses import APIResponse
 from core.models.assignments import Assignment
 from enum import Enum
 from core.models.assignments import Assignment, AssignmentStateEnum
+from .schema import AssignmentSchema, AssignmentGradeSchema
 
 class AssignmentStateEnum(Enum):
     SUBMITTED = 'SUBMITTED'
@@ -12,7 +13,7 @@ class AssignmentStateEnum(Enum):
 
 
 
-from .schema import AssignmentSchema, AssignmentGradeSchema
+
 teacher_assignments_resources = Blueprint('teacher_assignments_resources', __name__)
 
 
